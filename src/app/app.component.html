@@ -1,18 +1,10 @@
-<h1>Shipping Options Demo</h1>
-
-<ul>
-  <li *ngFor="let opt of shippingOptions()">
-    {{ opt.id }} - {{ opt.name }}
-  </li>
-</ul>
-
-<p>Selected option: {{ selectedOption().id }} - {{ selectedOption().name }}</p>
-
-<button (click)="nextShipping()">
-  Next Shipping Option
-</button>
-<button (click)="changeShippingOptions()">
-  Change Shipping Options
-</button>
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <app-custom-card [(value)]="parentValue"></app-custom-card>
+    </div>
+  </div>
+</div>
+<p>{{ parentValue() }}</p>
 
 <router-outlet />
