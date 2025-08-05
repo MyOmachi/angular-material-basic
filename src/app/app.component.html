@@ -1,10 +1,23 @@
+<div class="app-header">
+  <div class="container">
+    <h1>Angular Material Basic</h1>
+  </div>
+</div>
 <div class="container">
   <div class="row">
     <div class="col-4">
-      <app-custom-card [(value)]="parentValue"></app-custom-card>
+      <app-custom-card
+        [(value)]="parentValue"
+        (doubleValue)="doubleValue($event)"
+      ></app-custom-card>
+
+      <p>Using model: {{ parentValue() }}</p>
+      <p>Using Event: {{ emittedValue() }}</p>
+    </div>
+    <div class="col-4">
+      <app-custom-host-element> </app-custom-host-element>
     </div>
   </div>
 </div>
-<p>{{ parentValue() }}</p>
 
 <router-outlet />
